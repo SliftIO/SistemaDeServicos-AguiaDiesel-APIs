@@ -1,19 +1,13 @@
-Claro! Aqui está a estrutura completa e organizada da API para o sistema de serviços da oficina, considerando os documentos enviados e que os funcionários são usados para escalonamento:
 
-⸻
+# 📦 Estrutura da API - Sistema de Serviços da Oficina
 
-📦 Estrutura da API - Sistema de Serviços da Oficina
+## 1. 🔍 Serviços
 
-⸻
+### `GET /servicos`
+**Descrição:** Retorna todos os serviços com seus dados completos.
 
-1. 🔍 Serviços
-
-GET /servicos
-
-Descrição: Retorna todos os serviços com seus dados completos.
-
-Resposta:
-
+**Resposta:**
+```json
 [
   {
     "codigo": "S1",
@@ -25,18 +19,17 @@ Resposta:
   },
   ...
 ]
+```
 
+---
 
-⸻
+## 2. 🧩 Etapas dos Serviços
 
-2. 🧩 Etapas dos Serviços
+### `GET /servicos/:codigo/etapas`
+**Descrição:** Retorna as etapas que compõem um serviço específico (ex: revisão, regulagem etc).
 
-GET /servicos/:codigo/etapas
-
-Descrição: Retorna as etapas que compõem um serviço específico (ex: revisão, regulagem etc).
-
-Resposta:
-
+**Resposta:**
+```json
 {
   "codigo": "S1",
   "etapas": [
@@ -47,18 +40,17 @@ Resposta:
     { "nome": "ACABAMENTO", "tpr": 0.25, "percentual": "10%" }
   ]
 }
+```
 
+---
 
-⸻
+## 3. 📄 Ordens de Serviço
 
-3. 📄 Ordens de Serviço
+### `GET /ordens-servico`
+**Descrição:** Lista todas as ordens de serviço com cliente, serviços incluídos e status.
 
-GET /ordens-servico
-
-Descrição: Lista todas as ordens de serviço com cliente, serviços incluídos e status.
-
-Resposta:
-
+**Resposta:**
+```json
 [
   {
     "id": 101,
@@ -75,18 +67,17 @@ Resposta:
     "status": "concluida"
   }
 ]
+```
 
+---
 
-⸻
+## 4. 👷 Funcionários (para escalonamento)
 
-4. 👷 Funcionários (para escalonamento)
+### `GET /funcionarios`
+**Descrição:** Lista os funcionários da oficina com especialidades e disponibilidade para alocação nas etapas dos serviços.
 
-GET /funcionarios
-
-Descrição: Lista os funcionários da oficina com especialidades e disponibilidade para alocação nas etapas dos serviços.
-
-Resposta:
-
+**Resposta:**
+```json
 [
   {
     "id": 1,
@@ -103,15 +94,6 @@ Resposta:
     "disponivel": false
   }
 ]
+```
 
-
-⸻
-
-🚀 Possíveis futuros endpoints (opcional)
-	•	POST /ordens-servico: Criar nova ordem de serviço
-	•	POST /escalonar-servico: Atribuir funcionários automaticamente às etapas de um serviço com base na disponibilidade
-	•	GET /funcionarios/:id/escalonamentos: Ver em quais etapas/ordens o funcionário está alocado
-
-⸻
-
-Se quiser, posso gerar os modelos MER, os controllers em Node.js ou documentação Swagger com base nisso. Deseja seguir com essa próxima etapa?
+---
