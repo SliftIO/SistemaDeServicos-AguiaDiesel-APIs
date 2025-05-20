@@ -1,5 +1,3 @@
-# SistemaDeServicos-AguiaDiesel-APIs
-
 Claro! Aqui está a estrutura completa e organizada da API para o sistema de serviços da oficina, considerando os documentos enviados e que os funcionários são usados para escalonamento:
 
 ⸻
